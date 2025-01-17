@@ -1,0 +1,72 @@
+/* Container for the entire layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom, #0b0f19, #1d2331);
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(37, 37, 37, 0.9); /* Semi-transparent navbar background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 20px rgba(128, 0, 255, 0.6);
+  animation: glowPulse 2s infinite;
+}
+
+/* Navigation links */
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.link:hover {
+  color: #bd7bff;
+  text-shadow: 0 0 12px #d8b3fd;
+}
+
+/* Main content styling */
+.content {
+  flex: 1;
+  padding: 20px 40px;
+}
+
+/* Glow animation for the logo */
+@keyframes glowPulse {
+  0%,
+  100% {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(128, 0, 255, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(128, 0, 255, 1);
+  }
+}

@@ -1,0 +1,147 @@
+/* Overall Page Styling */
+.home {
+  text-align: center;
+  padding: 30px 20px; /* Increased padding for larger screens */
+  color: white;
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Title Styling */
+.title {
+  font-size: 4rem; /* Increased size for larger screens */
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #e6e6ff;
+  text-shadow: 0 4px 8px rgba(255, 255, 255, 0.2),
+    0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Description Styling */
+.description {
+  font-size: 1.8rem; /* Slightly larger for readability on large screens */
+  margin-top: 0;
+  margin-bottom: 40px;
+  max-width: 800px; /* Adjusted for wider content on larger screens */
+  line-height: 1.8;
+  color: #b8b8d4;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons Container */
+.buttons {
+  display: flex;
+  gap: 30px; /* Increased gap between buttons for larger layout */
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Button Styling */
+.button {
+  background: linear-gradient(to top, #a349ff, #c878ff); /* Smooth gradient */
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 15px 30px; /* Adjust padding for better proportions */
+  border: none;
+  border-radius: 50px; /* Rounded corners */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(128, 0, 255, 0.4); /* Glow effect */
+  position: relative; /* Required for pseudo-elements */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover State */
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(128, 0, 255, 0.6),
+    0 4px 10px rgba(200, 120, 255, 0.4); /* Brighter glow */
+}
+
+/* Active State */
+.button:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 10px rgba(128, 0, 255, 0.5); /* Dimmed glow */
+}
+
+/* Glowing Effect */
+.button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50px;
+  background: radial-gradient(
+    circle,
+    rgba(200, 120, 255, 0.4),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.button:hover::after {
+  opacity: 1; /* Enable glow on hover */
+  animation: glowPulse 1.5s infinite;
+}
+
+/* Glow Animation */
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(200, 120, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(200, 120, 255, 0.8);
+  }
+}
+
+/* Responsive Adjustments for Large Screens */
+@media (min-width: 1200px) {
+  .home {
+    padding: 80px 20px;
+  }
+
+  .title {
+    font-size: 4rem; /* Even larger title for big screens */
+  }
+
+  .description {
+    font-size: 1.5rem; /* Comfortable text size for large displays */
+    max-width: 500px;
+  }
+
+  .button {
+    font-size: 1.2rem; /* Larger button font for better readability */
+    padding: 25px 50px; /* More padding for larger buttons */
+  }
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .buttons {
+    gap: 20px;
+  }
+}
