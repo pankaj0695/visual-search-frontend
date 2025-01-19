@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import ClothRecommendation from "./components/ClothRecommendation";
 import VideoRecommendation from "./components/VideoRecommendation";
 import ProductRecommendation from "./components/ProductRecommendation";
+import Reviews from "./components/Reviews";
 
 function App() {
   return (
@@ -23,6 +24,10 @@ function App() {
           <Route
             path="/product-recommendation"
             element={<ProductRecommendation />}
+          />
+          <Route
+            path="/Reviews"
+            element={<Reviews />}
           />
         </Routes>
       </Layout>

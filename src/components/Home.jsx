@@ -30,6 +30,12 @@ function Home() {
         >
           Recommendation for Products
         </button>
+        <button
+          className={styles.button}
+          onClick={() => navigate("/Reviews")}
+        >
+          Reviews
+        </button>
       </div>
     </div>
   );
